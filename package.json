@@ -2,8 +2,10 @@
   "name": "calculator",
   "version": "1.0.0",
   "description": "a test task for Byndyusoft",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "test": "mocha"
   },
   "repository": {
@@ -22,8 +24,10 @@
   },
   "homepage": "https://github.com/Addeu/calculator#readme",
   "devDependencies": {
+    "assert": "^2.0.0",
     "chai": "^4.2.0",
-    "mocha": "^8.1.1"
+    "mocha": "^8.1.1",
+    "nodemon": "^2.0.4"
   },
   "dependencies": {
     "express": "^4.17.1"
