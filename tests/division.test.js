@@ -34,4 +34,9 @@ describe('Division tests', function() {
 		let intExpression = calc.calculate('555 / 60 / 0.5 / 35 / 8.15');
 		expect(intExpression).to.equal(0.06485539000876424);
 	});
+
+	it('Checks division by zero', () => {
+		let intExpression = calc.calculate('4 / 0');
+		expect(intExpression).to.equal(Infinity);
+	});
 });
