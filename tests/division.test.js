@@ -1,5 +1,37 @@
-import {describe} from "mocha";
+const mocha = require('mocha');
+const chai = require('chai');
+const Calculator = require('../bin/calculator');
+const expect = chai.expect;
+const calc = new Calculator();
 
-describe('', function() {
+describe('Division tests', function() {
+	it('Checks if division of two integers is correct', () => {
+		let intExpression = calc.calculate('4 / 2');
+		expect(intExpression).to.equal(2);
+	});
 
+	it('Checks if division of two floats is correct', () => {
+		let intExpression = calc.calculate('0.2 / 0.3');
+		expect(intExpression).to.equal(0.6666666666666667);
+	});
+
+	it('Checks if division of multiple integers is correct', () => {
+		let intExpression = calc.calculate('60 / 2 / 3 / 5');
+		expect(intExpression).to.equal(2);
+	});
+
+	it('Checks if division of multiple floats is correct', () => {
+		let intExpression = calc.calculate('1.1 / 0.9 / 1.2 / 1.0');
+		expect(intExpression).to.equal(1.0185185185185186);
+	});
+
+	it('Checks if division of integer and float is correct', () => {
+		let intExpression = calc.calculate('4 / 0.9');
+		expect(intExpression).to.equal(4.444444444444445);
+	});
+
+	it('Checks if division of multiple integers and floats is correct', () => {
+		let intExpression = calc.calculate('555 / 60 / 0.5 / 35 / 8.15');
+		expect(intExpression).to.equal(0.06485539000876424);
+	});
 });
