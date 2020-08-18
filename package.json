@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "mocha ./tests/*.test.js"
+    "test": "mocha ./tests/*.test.js",
+    "input-tests": "mocha ./tests/input.test.js",
+    "addition-tests": "mocha ./tests/addition.test.js"
   },
   "repository": {
     "type": "git",
