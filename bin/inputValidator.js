@@ -1,10 +1,18 @@
 const CONFIG = require('../config');
 
+/**
+ * @class {InputValidator}
+ */
 module.exports = class InputValidator {
 	constructor() {
 		this._prohibitedChars = CONFIG.prohibitedChars;
 	}
 
+	/**
+	 * @param {String} expression
+	 * @returns {boolean}
+	 * @public
+	 */
 	isInputValid(expression) {
 
 		if (this._hasProhibitedChars(expression)) {
@@ -26,6 +34,11 @@ module.exports = class InputValidator {
 		return true;
 	}
 
+	/**
+	 * @param {String} string
+	 * @returns {boolean}
+	 * @private
+	 */
 	_hasProhibitedChars(string) {
 		let bRet = false;
 
@@ -38,6 +51,11 @@ module.exports = class InputValidator {
 		return bRet;
 	}
 
+	/**
+	 * @param {String} string
+	 * @returns {boolean}
+	 * @private
+	 */
 	_isParenthesisMatching (string) {
 		let stack = [];
 		let splitStr = string.split('');
@@ -57,11 +75,21 @@ module.exports = class InputValidator {
 		return stack.length !== 0;
 	}
 
+	/**
+	 * @param {String} string
+	 * @returns {boolean}
+	 * @private
+	 */
 	_hasLetters(string) {
 		let regExp = /[a-z]|[а-я]/gi;
 		return !!string.match(regExp)
 	}
 
+	/**
+	 * @param {String} string
+	 * @returns {boolean}
+	 * @private
+	 */
 	_hasDoubleOperationSigns(string) {
 		let bRet = false;
 		let doubles = [/\+\+/, /\-\-/, /\*\*/, /\/\//];
