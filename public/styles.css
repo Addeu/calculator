@@ -10,8 +10,8 @@ button {
 .container {
     display: grid;
     justify-content: center;
-    grid-template-columns: 80px 80px 80px 80px;
-    grid-template-rows: 80px 80px;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 120px 100px 100px 100px 100px 100px;
     grid-template-areas:
             "header header header header"
             "main main main main"
@@ -31,11 +31,12 @@ button {
     font-size: 1px;
 }
 
-#currentValue {
+#inputField {
     background-color: black;
     grid-column-start: 1;
     grid-column-end: span 4;
     text-align: right;
+    overflow: scroll;
 }
 
 button.btn {
