@@ -32,11 +32,11 @@ button {
 }
 
 #inputField {
+    font-size: 22px;
     background-color: black;
     grid-column-start: 1;
     grid-column-end: span 4;
-    text-align: right;
-    overflow: scroll;
+    text-align: center;
 }
 
 button.btn {

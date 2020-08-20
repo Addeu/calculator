@@ -15,10 +15,6 @@ module.exports = class InputValidator {
 	 */
 	isInputValid(expression) {
 
-		if (this._hasNoOperations(expression)) {
-			return false
-		}
-
 		if (this._hasProhibitedChars(expression)) {
 			return false;
 		}
@@ -110,14 +106,14 @@ module.exports = class InputValidator {
 	/**
 	 * @param {String} string
 	 * @returns {boolean}
-	 * @private
+	 * @public
 	 */
-	_hasNoOperations(string) {
+	hasNoOperations(string) {
 		let absentOperations = 0;
 		let operations = CONFIG.legalOperations;
 
 		for (let i = 0; i < operations.length; ++i) {
-			if (string.indexOf(operations[i]) === -1) {
+			if (string.indexOf(operations[i]) === -1 || string.lastIndexOf(operations[i]) === 0) {
 				++absentOperations;
 			}
 		}

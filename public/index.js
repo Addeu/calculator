@@ -34,7 +34,17 @@ async function calculate() {
 	});
 
 	if (response.ok) {
-		let result = await response.text();
+		let result = await response.json();
+
+		if (isNaN(result) || result === null) {
+			input.innerHTML = "You've just broken the universe!";
+			return;
+		}
+
+		if (!Number.isInteger(result)) {
+			result = parseFloat(result).toFixed(10);
+		}
+
 		input.innerHTML = result;
 	} else {
 		input.innerHTML = 'ERROR';

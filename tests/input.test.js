@@ -6,8 +6,13 @@ const validator = new Validator();
 
 describe('Input tests', function() {
 	it('Checks if returns input if no operations were included', () => {
-		let expression = validator.isInputValid('256');
-		expect(expression).to.equal(false);
+		let expression = validator.hasNoOperations('256');
+		expect(expression).to.equal(true);
+	});
+
+	it('Checks if returns input if no operations were included and negatives were used', () => {
+		let expression = validator.hasNoOperations('-25');
+		expect(expression).to.equal(true);
 	});
 
 	it('Checks if rejects mixed digit-letter strings', () => {

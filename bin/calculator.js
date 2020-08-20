@@ -13,10 +13,14 @@ module.exports = class Calculator {
 	/**
 	 * @public
 	 * @param {String} expression
-	 * @returns {String} answer
+	 * @returns {Number} answer
 	 */
 	calculate(expression) {
 		let preformatted = this._preformatExpression(expression);
+
+		if (this._validator.hasNoOperations(expression)) {
+			return +expression;
+		}
 
 		if (this._validator.isInputValid(preformatted)) {
 			return this._mathEngine.evaluate(preformatted);
