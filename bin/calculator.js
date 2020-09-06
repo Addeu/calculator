@@ -1,10 +1,8 @@
-const mathEngine = require('mathjs');
-
 /**
  * @class {Calculator}
  */
 module.exports = class Calculator {
-	constructor(validator) {
+	constructor(validator, mathEngine) {
 		this._mathEngine = mathEngine;
 		this._validator = validator;
 	}
