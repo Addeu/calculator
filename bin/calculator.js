@@ -1,13 +1,12 @@
 const mathEngine = require('mathjs');
-const Validator = require('./inputValidator');
 
 /**
  * @class {Calculator}
  */
 module.exports = class Calculator {
-	constructor() {
+	constructor(validator) {
 		this._mathEngine = mathEngine;
-		this._validator = new Validator();
+		this._validator = validator;
 	}
 
 	/**
