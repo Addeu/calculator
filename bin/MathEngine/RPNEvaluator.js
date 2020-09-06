@@ -14,7 +14,7 @@ module.exports = class RPNEvaluator {
 	 * @returns {String}
 	 */
 	calculate(operator, a, b) {
-		return this.operations[opeartor](a, b);
+		return this.operations[operator](a, b);
 	}
 
 	/**
@@ -29,21 +29,21 @@ module.exports = class RPNEvaluator {
 		while (i !== RPNArray.tokens.length) {
 			
 			if (RPNArray.tokens[i].type === 'number') {
-				numberStack.push(Number(RPNArray.tokens[i].value()));
+				numberStack.push(Number(RPNArray.tokens[i].getValue()));
 			}
 			
 			if (RPNArray.tokens[i].type === 'operator') {
 				let result;
 				
-				if (RPNArray.tokens[i].value() === '?') {
+				if (RPNArray.tokens[i].getValue() === '?') {
 					let operandSingle = numberStack.pop();
 
-					result = this.calculate(RPNArray.tokens[i].value(), operandSingle, '');
+					result = this.calculate(RPNArray.tokens[i].getValue(), operandSingle, '');
 				} else {
 					let operandRight = numberStack.pop();
 					let operandLeft = numberStack.pop();
 
-					result = this.calculate(RPNArray.tokens[i].value(), operandLeft, operandRight);
+					result = this.calculate(RPNArray.tokens[i].getValue(), operandLeft, operandRight);
 				}
 				
 				numberStack.push(result);

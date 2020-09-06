@@ -5,7 +5,7 @@ const Token = require('./token');
  */
 module.exports = class NumberToken extends Token {
 	constructor(value) {
-		super('operator');
-		this.value(value);
+		super('number');
+		this._value = value;
 	}
 };

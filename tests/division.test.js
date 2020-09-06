@@ -1,8 +1,11 @@
 const mocha = require('mocha');
 const chai = require('chai');
+const CONFIG = require('../config');
+const Validator = require('../bin/inputValidator');
+const mathEngine = require('../bin/MathEngine/mathEngine');
 const Calculator = require('../bin/calculator');
 const expect = chai.expect;
-const calc = new Calculator();
+const calc = new Calculator(new Validator(CONFIG.prohibitedChars, CONFIG.legalOperations), mathEngine);
 
 describe('Division tests', function() {
 	it('Checks if division of two integers is correct', () => {

@@ -1,11 +1,10 @@
-const CONFIG = require('../config');
-
 /**
  * @class {InputValidator}
  */
 module.exports = class InputValidator {
-	constructor() {
-		this._prohibitedChars = CONFIG.prohibitedChars;
+	constructor(prohibited, legalOperations) {
+		this._prohibitedChars = prohibited;
+		this._legalOperations = legalOperations;
 	}
 
 	/**
@@ -110,7 +109,7 @@ module.exports = class InputValidator {
 	 */
 	hasNoOperations(string) {
 		let absentOperations = 0;
-		let operations = CONFIG.legalOperations;
+		let operations = this._legalOperations;
 
 		for (let i = 0; i < operations.length; ++i) {
 			if (string.indexOf(operations[i]) === -1 || string.lastIndexOf(operations[i]) === 0) {

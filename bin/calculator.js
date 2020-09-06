@@ -3,8 +3,8 @@
  */
 module.exports = class Calculator {
 	constructor(validator, mathEngine) {
-		this._mathEngine = mathEngine;
 		this._validator = validator;
+		this._mathEngine = mathEngine;
 	}
 
 	/**

@@ -9,11 +9,7 @@ module.exports = class Token {
 		this._value = null;
 	}
 
-	set value(value) {
-		this._value = value;
-	}
-
-	get value() {
+	getValue() {
 		return this._value;
 	}
 };

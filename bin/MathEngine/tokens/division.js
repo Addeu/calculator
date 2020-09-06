@@ -6,6 +6,6 @@ const Token = require('./token');
 module.exports = class DivisionToken extends Token {
 	constructor(value) {
 		super('operator', 2, 'left');
-		this.value(value);
+		this._value = value;
 	}
 };

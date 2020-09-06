@@ -22,7 +22,7 @@ module.exports = class Tokenizer {
 					number = '';
 				}
 
-				if (exp[i] === '-' && (tokens.length === 0 || ((tokens.length) && ['+', '-', '*', '/', '('].includes(tokens[tokens.length - 1].value())))) {
+				if (exp[i] === '-' && (tokens.length === 0 || ((tokens.length) && ['+', '-', '*', '/', '('].includes(tokens[tokens.length - 1].getValue())))) {
 					tokens.push(this.factory.create('?', '?'));
 				} else {
 					tokens.push(this.factory.create(exp[i], exp[i]));

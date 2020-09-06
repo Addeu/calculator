@@ -34,13 +34,13 @@ module.exports = class ToRPNParser {
 			}
 			
 			if (currentToken.type === 'parenthesis') {
-				if (currentToken.value() === '(') {
+				if (currentToken.getValue() === '(') {
 					operators.push(currentToken);
 				}
 				
-				if (currentToken.value() === ')') {
+				if (currentToken.getValue() === ')') {
 					
-					while (!operators.isEmpty() && operators.last().value() !== '(') {
+					while (!operators.isEmpty() && operators.last().getValue() !== '(') {
 						output.push(operators.pop());
 					}
 					

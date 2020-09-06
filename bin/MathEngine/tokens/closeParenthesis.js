@@ -6,6 +6,6 @@ const Token = require('./token');
 module.exports = class CloseParenthesisToken extends Token {
 	constructor(value) {
 		super('parenthesis');
-		this.value(value);
+		this._value = value;
 	}
 };

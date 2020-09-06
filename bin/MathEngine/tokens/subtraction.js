@@ -6,6 +6,6 @@ const Token = require('./token');
 module.exports = class SubtractionToken extends Token {
 	constructor(value) {
 		super('operator', 1, 'left');
-		this.value(value);
+		this._value = value;
 	}
 };

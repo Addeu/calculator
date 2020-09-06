@@ -1,8 +1,9 @@
 const mocha = require('mocha');
 const chai = require('chai');
+const CONFIG = require('../config');
 const Validator = require('../bin/inputValidator');
 const expect = chai.expect;
-const validator = new Validator();
+const validator = new Validator(CONFIG.prohibitedChars, CONFIG.legalOperations);
 
 describe('Input tests', function() {
 	it('Checks if returns input if no operations were included', () => {
