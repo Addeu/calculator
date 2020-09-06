@@ -1,7 +1,7 @@
 /**
  * @class {RPNEvaluator}
  */
-modules.exports = class RPNEvaluator {
+module.exports = class RPNEvaluator {
 	constructor(operationsDictionary) {
 		this.operations = operationsDictionary;
 	}

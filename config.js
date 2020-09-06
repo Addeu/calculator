@@ -12,7 +12,7 @@ const  CONFIG = {
 		'/': 'Division',
 		'?': 'UnaryMinus',
 		'(': 'OpenParenthesis',
-		')': 'CLoseParenthesis',
+		')': 'CloseParenthesis',
 		'number': 'Number'
 	},
 	operationsDictionary: {
