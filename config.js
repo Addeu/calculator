@@ -14,6 +14,13 @@ const  CONFIG = {
 		'(': 'OpenParenthesis',
 		')': 'CLoseParenthesis',
 		'number': 'Number'
+	},
+	operationsDictionary: {
+		'+': (a,b)=>(a+b),
+		'-': (a,b)=>(a-b),
+		'/': (a,b)=>(a/b),
+		'*': (a,b)=>(a*b),
+		'?': (a)=>(-a)
 	}
 };
 
