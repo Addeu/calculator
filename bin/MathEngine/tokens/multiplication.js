@@ -5,7 +5,7 @@ const Token = require('./token');
  */
 module.exports = class MultiplicationToken extends Token {
 	constructor(value) {
-		super('operator', 1, 'left');
+		super('operator', 2, 'left');
 		this._value = value;
 	}
 };
