@@ -8,7 +8,8 @@
     "dev": "nodemon app.js",
     "test": "mocha ./tests/*.test.js",
     "input-tests": "mocha ./tests/input.test.js",
-    "addition-tests": "mocha ./tests/addition.test.js"
+    "addition-tests": "mocha ./tests/addition.test.js",
+    "rpn-parse-test": "mocha ./tests/rpn.test.js"
   },
   "repository": {
     "type": "git",

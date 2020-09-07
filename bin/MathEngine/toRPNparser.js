@@ -6,7 +6,7 @@ const Stack = require('../Utils/stack');
 module.exports = class ToRPNParser {
 	/**
 	 * @public
-	 * @param {Array.<Token>} tokenSet
+	 * @param {Array<Token>} tokenSet
 	 * @returns {Stack} consider as Array
 	 */
 	postfixNotation(tokenSet) {
