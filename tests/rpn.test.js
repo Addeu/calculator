@@ -22,6 +22,6 @@ describe('Reversed Polish Notation test', function() {
 		];
 
 		let parsedValue = parser.postfixNotation(tokenizer.buildTokenSet('5+6*(54-50)'));
-		expect(parsedValue.tokens).to.have.deep.members(expected);
+		expect(parsedValue.items).to.have.deep.members(expected);
 	})
 });

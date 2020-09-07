@@ -26,24 +26,24 @@ module.exports = class RPNEvaluator {
 		let numberStack = [];
 
 		let i = 0;
-		while (i !== RPNArray.tokens.length) {
+		while (i !== RPNArray.items.length) {
 			
-			if (RPNArray.tokens[i].type === 'number') {
-				numberStack.push(Number(RPNArray.tokens[i].getValue()));
+			if (RPNArray.items[i].type === 'number') {
+				numberStack.push(Number(RPNArray.items[i].getValue()));
 			}
 			
-			if (RPNArray.tokens[i].type === 'operator') {
+			if (RPNArray.items[i].type === 'operator') {
 				let result;
 				
-				if (RPNArray.tokens[i].getValue() === '?') {
+				if (RPNArray.items[i].getValue() === '?') {
 					let operandSingle = numberStack.pop();
 
-					result = this.calculate(RPNArray.tokens[i].getValue(), operandSingle, '');
+					result = this.calculate(RPNArray.items[i].getValue(), operandSingle, '');
 				} else {
 					let operandRight = numberStack.pop();
 					let operandLeft = numberStack.pop();
 
-					result = this.calculate(RPNArray.tokens[i].getValue(), operandLeft, operandRight);
+					result = this.calculate(RPNArray.items[i].getValue(), operandLeft, operandRight);
 				}
 				
 				numberStack.push(result);

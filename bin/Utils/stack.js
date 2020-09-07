@@ -3,7 +3,7 @@
  */
 module.exports = class Stack {
 	constructor() {
-		this.tokens = [];
+		this.items = [];
 	}
 
 	/**
@@ -11,23 +11,23 @@ module.exports = class Stack {
 	 * @returns {number}
 	 */
 	length() {
-		return this.tokens.length;
+		return this.items.length;
 	}
 
 	/**
 	 * @public
-	 * @param {Token} token
+	 * @param {item} item
 	 */
-	push(token) {
-		this.tokens.push(token);
+	push(item) {
+		this.items.push(item);
 	}
 
 	/**
 	 * @public
-	 * @returns {Token}
+	 * @returns {item}
 	 */
 	pop() {
-		return this.tokens.pop();
+		return this.items.pop();
 	}
 
 	/**
@@ -35,15 +35,15 @@ module.exports = class Stack {
 	 * @returns {boolean}
 	 */
 	isEmpty() {
-		return !this.tokens.length;
+		return !this.items.length;
 	}
 
 	/**
 	 * @public
-	 * @returns {Token}
+	 * @returns {item}
 	 */
 	last() {
-		return this.tokens[this.tokens.length-1];
+		return this.items[this.items.length-1];
 	}
 
 	/**
@@ -52,6 +52,6 @@ module.exports = class Stack {
 	 * @returns {Array}
 	 */
 	map(callback) {
-		return this.tokens.map(callback);
+		return this.items.map(callback);
 	}
 };
