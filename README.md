@@ -1,2 +1,2 @@
 # calculator
-A test task for Byndyusoft
+A test task
